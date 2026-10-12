@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolpool Campus — Tools Together, Bigger Impact</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        plum: {
+                            DEFAULT: '#28152D',
+                            dark: '#1B0C1F',
+                            light: '#3C2044',
+                        },
+                        purple: {
+                            brand: '#704477',
+                            deep: '#502A58',
+                            light: '#8E5A96',
+                        },
+                        mauve: {
+                            DEFAULT: '#A77BAA',
+                            soft: '#C49EC7',
+                        },
+                        lavender: {
+                            DEFAULT: '#DCC9DF',
+                            soft: '#F1E8F3',
+                            light: '#FAF5FB',
+                        },
+                        offwhite: '#FAF9FC',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        handwriting: ['"Caveat"', 'cursive'],
+                    },
+                    boxShadow: {
+                        'glossy': '0 8px 32px 0 rgba(112, 68, 119, 0.12)',
+                        'card': '0 4px 20px -2px rgba(40, 21, 45, 0.06), 0 2px 6px -1px rgba(40, 21, 45, 0.04)',
+                        'floating': '0 20px 40px -15px rgba(80, 42, 88, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom visual embellishments matching supplied design materials */
+        body {
+            background-color: #FAF9FC;
+            color: #28152D;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-condensed {
+            font-stretch: 85%;
+            letter-spacing: -0.02em;
+        }
+
+        /* Iridescent ribbon overlay effects */
+        .iridescent-bg {
+            background: linear-gradient(135deg, rgba(220,201,223,0.3) 0%, rgba(241,232,243,0.5) 50%, rgba(167,123,170,0.25) 100%);
+            backdrop-filter: blur(12px);
+        }
+
+        .iridescent-ribbon {
+            background: linear-gradient(90deg, rgba(220,201,223,0.4) 0%, rgba(167,123,170,0.3) 50%, rgba(112,68,119,0.2) 100%);
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #502A58 0%, #704477 50%, #A77BAA 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(135deg, #3C2044 0%, #502A58 50%, #8E5A96 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(112, 68, 119, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(220, 201, 223, 0.6);
+        }
+
+        /* Custom Diamond Logo Pattern */
+        .logo-diamond {
+            width: 24px;
+            height: 24px;
+            transform: rotate(45deg);
+            border: 2px solid #704477;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-diamond::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #A77BAA;
+        }
+
+        /* Sparkle animation */
+        @keyframes floatSparkle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+            50% { transform: translateY(-8px) rotate(15deg); opacity: 1; }
+        }
+
+        .sparkle-anim {
+            animation: floatSparkle 4s ease-in-out infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9FC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DCC9DF;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A77BAA;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-lavender selection:text-plum">
+
+    <!-- STICKY TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 w-full bg-offwhite/90 backdrop-blur-md border-b border-lavender/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo & Tagline -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-lavender-soft flex items-center justify-center border border-purple-light/30 shadow-sm group-hover:border-purple-brand transition-colors">
+                        <div class="logo-diamond"></div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg tracking-tight text-plum uppercase font-condensed">Toolpool Campus</span>
+                        <span class="text-[10px] font-semibold text-purple-light tracking-wide -mt-1 hidden sm:block">Tools Together, Bigger Impact</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#beranda" class="px-3 py-2 text-sm font-semibold text-plum hover:text-purple-brand rounded-lg transition-colors">Beranda</a>
+                    <a href="#pilihan-tools" class="px-3 py-2 text-sm font-semibold text-plum hover:text-purple-brand rounded-lg transition-colors">Pilihan Tools</a>
+                    <a href="#cara-kerja" class="px-3 py-2 text-sm font-semibold text-plum hover:text-purple-brand rounded-lg transition-colors">Cara Kerja</a>
+                    <a href="#keunggulan" class="px-3 py-2 text-sm font-semibold text-plum hover:text-purple-brand rounded-lg transition-colors">Keunggulan</a>
+                    <a href="#transparansi" class="px-3 py-2 text-sm font-semibold text-plum hover:text-purple-brand rounded-lg transition-colors">Transparansi</a>
+                    <a href="#faq" class="px-3 py-2 text-sm font-semibold text-plum hover:text-purple-brand rounded-lg transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="openModal('loginModal')" class="px-4 py-2 text-sm font-bold text-plum hover:text-purple-brand transition-colors">
+                        Masuk
+                    </button>
+                    <a href="#pilihan-tools" class="gradient-btn text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-md flex items-center gap-2">
+                        <span>Mulai Sekarang</span>
+                        <i class="fa-solid font-xs fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2.5 rounded-xl text-plum hover:bg-lavender-soft transition-colors focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileDrawer" class="hidden md:hidden bg-offwhite border-b border-lavender/80 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-plum hover:bg-lavender-soft">Beranda</a>
+            <a href="#pilihan-tools" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-plum hover:bg-lavender-soft">Pilihan Tools</a>
+            <a href="#cara-kerja" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-plum hover:bg-lavender-soft">Cara Kerja</a>
+            <a href="#keunggulan" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-plum hover:bg-lavender-soft">Keunggulan</a>
+            <a href="#transparansi" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-plum hover:bg-lavender-soft">Transparansi Biaya</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-plum hover:bg-lavender-soft">FAQ</a>
+            <div class="pt-2 border-t border-lavender/60 flex flex-col gap-2">
+                <button onclick="toggleMobileMenu(); openModal('loginModal')" class="w-full text-center py-2.5 font-bold text-plum border border-lavender rounded-xl">Masuk</button>
+                <a href="#pilihan-tools" onclick="toggleMobileMenu()" class="w-full text-center gradient-btn text-white py-2.5 rounded-xl font-bold shadow-sm">Mulai Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <!-- Background Abstract Iridescent Elements -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-lavender/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -left-32 w-80 h-80 bg-mauve-soft/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Hero Copy -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <!-- Top Sub-tagline pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lavender-soft border border-lavender text-purple-brand text-xs sm:text-sm font-bold">
+                        <span class="text-xs">✦</span>
+                        <span>Satu Platform, Banyak Manfaat</span>
+                        <span class="text-xs">✦</span>
+                    </div>
+
+                    <!-- Bold Editorial Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-plum tracking-tight leading-[1.08] font-condensed">
+                        TOOLS DIGITAL PREMIUM,<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-deep via-purple-brand to-mauve">LEBIH MUDAH DIJANGKAU.</span>
+                    </h1>
+
+                    <!-- Supporting Description -->
+                    <p class="text-base sm:text-lg text-plum/80 leading-relaxed max-w-2xl font-normal">
+                        Temukan pilihan akses tools digital untuk mendukung kuliah, kreativitas, dan produktivitasmu bersama <strong class="font-bold text-plum">Toolpool Campus</strong>. Akses terstruktur, transparan, dan aman.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#pilihan-tools" class="gradient-btn text-white font-bold px-8 py-4 rounded-full shadow-lg text-base flex items-center gap-3">
+                            <span>Jelajahi Tools</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#cara-kerja" class="bg-white hover:bg-lavender-light border border-lavender text-plum font-bold px-7 py-4 rounded-full text-base transition-colors flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-circle-play text-purple-brand"></i>
+                            <span>Lihat Cara Kerja</span>
+                        </a>
+                    </div>
+
+                    <!-- Hand-written Arrow Note (Matching Instagram visual vibe) -->
+                    <div class="pt-2 flex items-center gap-3 text-purple-brand font-handwriting text-xl sm:text-2xl select-none">
+                        <i class="fa-solid fa-arrow-turn-down text-base opacity-70"></i>
+                        <span>Akses patungan resmi, bukan share akun ilegal!</span>
+                    </div>
+
+                    <!-- Trust Label -->
+                    <div class="pt-4 border-t border-lavender/60 flex items-start gap-3 text-xs sm:text-sm text-plum/70 max-w-xl">
+                        <i class="fa-solid fa-shield-halved text-purple-brand text-base mt-0.5 shrink-0"></i>
+                        <p>
+                            <strong class="font-bold text-plum">Akses Resmi & Transparan:</strong> Produktif bersama teknologi, dengan akses yang transparan dan sesuai ketentuan layanan dari masing-masing penyedia software.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Visual Composition (Floating Tool Cards with Glossy Ribbon) -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Glass Frame Canvas -->
+                    <div class="relative mx-auto max-w-md lg:max-w-none p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-white/90 via-lavender-soft/40 to-mauve-soft/20 border border-lavender shadow-floating backdrop-blur-md">
+                        
+                        <!-- Decorative Sparkles -->
+                        <div class="absolute -top-4 -right-2 text-2xl sparkle-anim">✨</div>
+                        <div class="absolute bottom-6 -left-4 text-xl sparkle-anim" style="animation-delay: 1.5s;">✦</div>
+
+                        <!-- Badge Banner -->
+                        <div class="mb-6 flex justify-between items-center pb-4 border-b border-lavender/50">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-brand">Ekosistem Tool Belajar</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-purple-brand/10 text-purple-brand text-xs font-bold">100% Legal</span>
+                        </div>
+
+                        <!-- 2x2 Grid of Featured Tools -->
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            
+                            <!-- Canva Floating Card -->
+                            <div class="bg-white p-4 rounded-2xl border border-lavender shadow-card hover:shadow-glossy transition-all hover:-translate-y-1 group">
+                                <div class="w-10 h-10 rounded-xl bg-[#00C4CC]/10 flex items-center justify-center text-[#00C4CC] font-bold text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                                <h3 class="font-bold text-plum text-sm sm:text-base">Canva Pro</h3>
+                                <p class="text-xs text-plum/60 mt-1 line-clamp-2">Desain presentasi & konten visual.</p>
+                                <span class="inline-block mt-3 text-[10px] font-bold text-purple-brand bg-lavender-soft px-2 py-0.5 rounded-full">Desain</span>
+                            </div>
+
+                            <!-- ChatGPT Floating Card -->
+                            <div class="bg-white p-4 rounded-2xl border border-lavender shadow-card hover:shadow-glossy transition-all hover:-translate-y-1 group">
+                                <div class="w-10 h-10 rounded-xl bg-[#10A37F]/10 flex items-center justify-center text-[#10A37F] font-bold text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <h3 class="font-bold text-plum text-sm sm:text-base">ChatGPT Plus</h3>
+                                <p class="text-xs text-plum/60 mt-1 line-clamp-2">Brainstorming & bantuan belajar AI.</p>
+                                <span class="inline-block mt-3 text-[10px] font-bold text-purple-brand bg-lavender-soft px-2 py-0.5 rounded-full">AI Assistant</span>
+                            </div>
+
+                            <!-- Grammarly Floating Card -->
+                            <div class="bg-white p-4 rounded-2xl border border-lavender shadow-card hover:shadow-glossy transition-all hover:-translate-y-1 group">
+                                <div class="w-10 h-10 rounded-xl bg-[#15C39A]/10 flex items-center justify-center text-[#05A378] font-bold text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-pen-nib"></i>
+                                </div>
+                                <h3 class="font-bold text-plum text-sm sm:text-base">Grammarly</h3>
+                                <p class="text-xs text-plum/60 mt-1 line-clamp-2">Perbaiki kejelasan & kualitas tulisan.</p>
+                                <span class="inline-block mt-3 text-[10px] font-bold text-purple-brand bg-lavender-soft px-2 py-0.5 rounded-full">Menulis</span>
+                            </div>
+
+                            <!-- Notion Floating Card -->
+                            <div class="bg-white p-4 rounded-2xl border border-lavender shadow-card hover:shadow-glossy transition-all hover:-translate-y-1 group">
+                                <div class="w-10 h-10 rounded-xl bg-plum/10 flex items-center justify-center text-plum font-bold text-xl mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-cube"></i>
+                                </div>
+                                <h3 class="font-bold text-plum text-sm sm:text-base">Notion</h3>
+                                <p class="text-xs text-plum/60 mt-1 line-clamp-2">Workspace catatan & manajemen tugas.</p>
+                                <span class="inline-block mt-3 text-[10px] font-bold text-purple-brand bg-lavender-soft px-2 py-0.5 rounded-full">Productivity</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Bottom Tag pill in Hero Graphic -->
+                        <div class="mt-5 p-3 rounded-xl bg-gradient-to-r from-purple-deep to-purple-brand text-white text-center text-xs font-semibold shadow-inner">
+                            “Tools premium, kini bisa diakses secara terencana bersama teman.”
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOLS CATALOG SECTION -->
+    <section id="pilihan-tools" class="py-16 lg:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-soft text-purple-brand text-xs font-extrabold uppercase tracking-wider">
+                    Katalog Lengkap
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-plum tracking-tight font-condensed">
+                    TOOLS PILIHAN UNTUK PRODUKTIVITASMU
+                </h2>
+                <p class="text-base sm:text-lg text-plum/75">
+                    Pilih tools yang sesuai dengan kebutuhan belajar, berkarya, dan mengatur aktivitas perkuliahanmu.
+                </p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="mt-10 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-4 justify-between bg-offwhite p-3 rounded-2xl border border-lavender shadow-sm">
+                
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
+                    <button onclick="filterTools('all', this)" class="category-btn active text-xs sm:text-sm font-bold px-4 py-2 rounded-xl bg-purple-brand text-white transition-all">
+                        Semua Tools
+                    </button>
+                    <button onclick="filterTools('desain', this)" class="category-btn text-xs sm:text-sm font-bold px-4 py-2 rounded-xl text-plum hover:bg-lavender-soft transition-all">
+                        Desain
+                    </button>
+                    <button onclick="filterTools('ai', this)" class="category-btn text-xs sm:text-sm font-bold px-4 py-2 rounded-xl text-plum hover:bg-lavender-soft transition-all">
+                        AI & Assistant
+                    </button>
+                    <button onclick="filterTools('writing', this)" class="category-btn text-xs sm:text-sm font-bold px-4 py-2 rounded-xl text-plum hover:bg-lavender-soft transition-all">
+                        Menulis
+                    </button>
+                    <button onclick="filterTools('notes', this)" class="category-btn text-xs sm:text-sm font-bold px-4 py-2 rounded-xl text-plum hover:bg-lavender-soft transition-all">
+                        Workspace
+                    </button>
+                </div>
+
+                <!-- Live Search Box -->
+                <div class="relative w-full md:w-64">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-light text-sm"></i>
+                    <input type="text" id="toolSearchInput" onkeyup="searchTools()" placeholder="Cari nama tools..." class="w-full pl-9 pr-4 py-2 text-sm bg-white border border-lavender rounded-xl focus:outline-none focus:border-purple-brand focus:ring-1 focus:ring-purple-brand text-plum placeholder-plum/40">
+                </div>
+
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div id="toolsGrid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- CARD 1: CANVA -->
+                <div class="tool-card bg-offwhite rounded-3xl p-6 border border-lavender shadow-card hover:shadow-glossy hover:border-purple-soft transition-all duration-300 flex flex-col justify-between" data-category="desain" data-name="canva pro">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-[#00C4CC]/10 text-[#00C4CC] flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                                <i class="fa-solid fa-circle-check text-[9px] mr-1"></i> Informasi Tersedia
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-plum">Canva Pro</h3>
+                        <p class="text-xs font-semibold text-purple-brand mt-0.5">Tim & Edu Arrangement</p>
+                        <p class="text-sm text-plum/75 mt-3 leading-relaxed">
+                            Bantu wujudkan desain presentasi, poster tugas, dan konten kreatif media sosial secara intuitif.
+                        </p>
+                        
+                        <!-- Features checklist -->
+                        <ul class="mt-4 space-y-2 text-xs text-plum/80 border-t border-lavender/60 pt-4">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Ratusan ribu template premium</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Penghapus Latar Belakang AI</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Kolaborasi desain tim real-time</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-lavender/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-plum/60 block">Estimasi biaya patungan:</span>
+                            <span class="text-xs font-bold text-purple-brand">Grup Resmi Provider</span>
+                        </div>
+                        <button onclick="openToolDetail('canva')" class="gradient-btn text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm flex items-center gap-1.5">
+                            <span>Detail</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: CHATGPT -->
+                <div class="tool-card bg-offwhite rounded-3xl p-6 border border-lavender shadow-card hover:shadow-glossy hover:border-purple-soft transition-all duration-300 flex flex-col justify-between" data-category="ai" data-name="chatgpt plus ai">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-[#10A37F]/10 text-[#10A37F] flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                                <i class="fa-solid fa-circle-check text-[9px] mr-1"></i> Informasi Tersedia
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-plum">ChatGPT Plus</h3>
+                        <p class="text-xs font-semibold text-purple-brand mt-0.5">Team & Group Workspace</p>
+                        <p class="text-sm text-plum/75 mt-3 leading-relaxed">
+                            Eksplorasi ide, brainstorming, riset tugas kuliah, dan dukungan logika pemrograman.
+                        </p>
+                        
+                        <!-- Features checklist -->
+                        <ul class="mt-4 space-y-2 text-xs text-plum/80 border-t border-lavender/60 pt-4">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Model GPT-4o & akses prioritas</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Analisis data & pembuatan gambar DALL-E</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Akses cepat tanpa antrean peak-time</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-lavender/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-plum/60 block">Estimasi biaya patungan:</span>
+                            <span class="text-xs font-bold text-purple-brand">Grup Resmi Provider</span>
+                        </div>
+                        <button onclick="openToolDetail('chatgpt')" class="gradient-btn text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm flex items-center gap-1.5">
+                            <span>Detail</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3: GRAMMARLY -->
+                <div class="tool-card bg-offwhite rounded-3xl p-6 border border-lavender shadow-card hover:shadow-glossy hover:border-purple-soft transition-all duration-300 flex flex-col justify-between" data-category="writing" data-name="grammarly premium">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-[#05A378]/10 text-[#05A378] flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                                <i class="fa-solid fa-hourglass-half text-[9px] mr-1"></i> Perlu Verifikasi
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-plum">Grammarly</h3>
+                        <p class="text-xs font-semibold text-purple-brand mt-0.5">Business & Educational Plan</p>
+                        <p class="text-sm text-plum/75 mt-3 leading-relaxed">
+                            Bantu tingkatkan kejelasan, nada bahasa, dan tata tata tulisan akademis & esai.
+                        </p>
+                        
+                        <!-- Features checklist -->
+                        <ul class="mt-4 space-y-2 text-xs text-plum/80 border-t border-lavender/60 pt-4">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Pengecekan tata bahasa lanjutan</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Penyesuaian nada & struktur kalimat</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Pemeriksaan plagiarisme terintegrasi</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-lavender/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-plum/60 block">Status Skema:</span>
+                            <span class="text-xs font-bold text-amber-700">Dalam Verifikasi Terms</span>
+                        </div>
+                        <button onclick="openToolDetail('grammarly')" class="gradient-btn text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm flex items-center gap-1.5">
+                            <span>Detail</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4: NOTION -->
+                <div class="tool-card bg-offwhite rounded-3xl p-6 border border-lavender shadow-card hover:shadow-glossy hover:border-purple-soft transition-all duration-300 flex flex-col justify-between" data-category="notes" data-name="notion plus workspace">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-plum/10 text-plum flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-purple-100 text-purple-900 border border-purple-200">
+                                <i class="fa-solid fa-sparkles text-[9px] mr-1"></i> Segera Hadir
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-plum">Notion</h3>
+                        <p class="text-xs font-semibold text-purple-brand mt-0.5">Plus & Team Workspace</p>
+                        <p class="text-sm text-plum/75 mt-3 leading-relaxed">
+                            Atur catatan kuliah, jadwal proyek kelompok, dan database riset dalam satu tempat.
+                        </p>
+                        
+                        <!-- Features checklist -->
+                        <ul class="mt-4 space-y-2 text-xs text-plum/80 border-t border-lavender/60 pt-4">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Unggahan file tanpa batas ukuran</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Kolaborasi anggota tim & permission</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-purple-brand"></i>
+                                <span>Riwayat versi dokumen 30 hari</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-lavender/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-plum/60 block">Status Ketersediaan:</span>
+                            <span class="text-xs font-bold text-purple-brand">Penyiapan Kemitraan</span>
+                        </div>
+                        <button onclick="openToolDetail('notion')" class="gradient-btn text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm flex items-center gap-1.5">
+                            <span>Detail</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Search State Placeholder -->
+            <div id="noResultsState" class="hidden text-center py-12">
+                <div class="w-16 h-16 bg-lavender-soft rounded-full flex items-center justify-center mx-auto text-purple-brand text-2xl mb-3">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <h3 class="text-lg font-bold text-plum">Tool tidak ditemukan</h3>
+                <p class="text-sm text-plum/60 mt-1">Coba gunakan kata kunci lain atau pilih kategori Semua Tools.</p>
+            </div>
+
+            <!-- Disclaimer Banner -->
+            <div class="mt-12 p-4 rounded-2xl bg-lavender-soft/60 border border-lavender text-xs text-plum/70 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-purple-brand text-base mt-0.5 shrink-0"></i>
+                <span>
+                    <strong>Catatan Transparansi Kepatuhan:</strong> Toolpool Campus tidak menjual akun bajakan atau lisensi tidak sah. Kami hanya membantu mahasiswa menemukan skema kelompok (Team/Group/Edu) resmi yang secara eksplisit diizinkan dalam syarat & ketentuan (Terms of Service) penyedia software terkait.
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="cara-kerja" class="py-16 lg:py-24 bg-offwhite relative border-t border-lavender/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender text-purple-brand text-xs font-extrabold uppercase tracking-wider">
+                    Alur Mudah & Transparan
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-plum tracking-tight font-condensed">
+                    MULAI DALAM 3 LANGKAH
+                </h2>
+                <p class="text-base sm:text-lg text-plum/75">
+                    Proses pencocokan patungan yang ringkas, transparan, dan terstruktur untuk mahasiswa.
+                </p>
+            </div>
+
+            <!-- Connected 3 Step Cards -->
+            <div class="mt-14 grid md:grid-cols-3 gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="relative bg-white rounded-3xl p-8 border border-lavender shadow-card hover:shadow-glossy transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-4xl font-black text-purple-light/40 font-condensed">01</span>
+                        <div class="w-12 h-12 rounded-2xl bg-lavender-soft flex items-center justify-center text-purple-brand text-xl">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-plum mb-2">Pilih Tools</h3>
+                    <p class="text-sm text-plum/75 leading-relaxed">
+                        Jelajahi katalog dan pilih software digital yang kamu butuhkan untuk menunjang tugas kuliah atau proyek tim.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-lavender/50 text-xs text-purple-brand font-semibold">
+                        ✓ Pilih dari opsi terverifikasi
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative bg-white rounded-3xl p-8 border border-lavender shadow-card hover:shadow-glossy transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-4xl font-black text-purple-light/40 font-condensed">02</span>
+                        <div class="w-12 h-12 rounded-2xl bg-lavender-soft flex items-center justify-center text-purple-brand text-xl">
+                            <i class="fa-solid fa-[#704477] fa-calculator"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-plum mb-2">Cek Pilihan Akses</h3>
+                    <p class="text-sm text-plum/75 leading-relaxed">
+                        Tinjau rincian paket, estimasi biaya per orang, batas kuota anggota, serta ketentuan layanan resmi penyedia software.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-lavender/50 text-xs text-purple-brand font-semibold">
+                        ✓ Rincian biaya 100% transparan
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative bg-white rounded-3xl p-8 border border-lavender shadow-card hover:shadow-glossy transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-4xl font-black text-purple-light/40 font-condensed">03</span>
+                        <div class="w-12 h-12 rounded-2xl bg-lavender-soft flex items-center justify-center text-purple-brand text-xl">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-plum mb-2">Ikuti Proses Resmi</h3>
+                    <p class="text-sm text-plum/75 leading-relaxed">
+                        Bergabunglah ke dalam kelompok berlangganan resmi yang aman dari risiko penutupan akun atau pembekuan lisensi.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-lavender/50 text-xs text-purple-brand font-semibold">
+                        ✓ Terhindar dari akun ilegal
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section id="keunggulan" class="py-16 lg:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-soft text-purple-brand text-xs font-extrabold uppercase tracking-wider">
+                    Nilai Utama
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-plum tracking-tight font-condensed uppercase">
+                    PRODUKTIVITAS LEBIH TERARAH, ANGGARAN LEBIH TERENCANA
+                </h2>
+                <p class="text-base sm:text-lg text-plum/75">
+                    Kenapa mahasiswa mempercayakan pencarian akses tools produktivitas melalui Toolpool Campus?
+                </p>
+            </div>
+
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Benefit 1 -->
+                <div class="bg-offwhite p-6 rounded-3xl border border-lavender shadow-card hover:border-purple-brand hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-brand text-white flex items-center justify-center text-xl mb-5 shadow-sm">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum">Lebih Terjangkau</h3>
+                    <p class="text-sm text-plum/75 mt-2 leading-relaxed">
+                        Eksplorasi opsi berlangganan resmi yang dapat dibagi biayanya sesuai jumlah kuota anggota tim yang diizinkan.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-offwhite p-6 rounded-3xl border border-lavender shadow-card hover:border-purple-brand hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-brand text-white flex items-center justify-center text-xl mb-5 shadow-sm">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum">Transparan</h3>
+                    <p class="text-sm text-plum/75 mt-2 leading-relaxed">
+                        Seluruh rincian biaya langganan, biaya platform (jika ada), dan syarat penggunaan disampaikan secara terbuka tanpa tersembunyi.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-offwhite p-6 rounded-3xl border border-lavender shadow-card hover:border-purple-brand hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-brand text-white flex items-center justify-center text-xl mb-5 shadow-sm">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum">Praktis</h3>
+                    <p class="text-sm text-plum/75 mt-2 leading-relaxed">
+                        Tidak perlu pusing mencari partner kelompok sendiri. Platform membantu proses penataan dan verifikasi secara terpusat.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-offwhite p-6 rounded-3xl border border-lavender shadow-card hover:border-purple-brand hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-brand text-white flex items-center justify-center text-xl mb-5 shadow-sm">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-plum">Sesuai Ketentuan</h3>
+                    <p class="text-sm text-plum/75 mt-2 leading-relaxed">
+                        Hanya memfasilitasi skema langganan kelompok yang secara sah diperbolehkan dalam regulasi resmi masing-party software.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COST TRANSPARENCY SECTION -->
+    <section id="transparansi" class="py-16 lg:py-24 bg-gradient-to-b from-lavender-soft/80 via-offwhite to-white relative border-t border-lavender/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-brand/10 text-purple-brand text-xs font-extrabold uppercase tracking-wider">
+                    Kalkulator & Rincian
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-plum tracking-tight font-condensed">
+                    TAHU BIAYANYA, PAHAM PILIHANNYA.
+                </h2>
+                <p class="text-base sm:text-lg text-plum/75">
+                    Pelajari bagaimana estimasi biaya per orang dihitung secara adil dan terstruktur berdasarkan paket resmi dari penyedia layanan.
+                </p>
+            </div>
+
+            <!-- Interactive Cost Calculator Widget -->
+            <div class="mt-12 max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-lavender shadow-floating">
+                
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Selector Controls -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <h3 class="text-xl font-bold text-plum border-b border-lavender pb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-purple-brand"></i>
+                            Simulasi Akses Tools
+                        </h3>
+
+                        <!-- Select Tool -->
+                        <div>
+                            <label class="block text-xs font-bold text-plum/70 mb-2 uppercase tracking-wider">1. Pilih Tools Digital</label>
+                            <select id="calcToolSelect" onchange="updateCostCalculation()" class="w-full px-4 py-3 bg-offwhite border border-lavender rounded-xl font-bold text-plum focus:outline-none focus:border-purple-brand">
+                                <option value="canva" selected>Canva Pro (Tim / Kelompok)</option>
+                                <option value="chatgpt">ChatGPT Plus (Skema Team)</option>
+                                <option value="grammarly">Grammarly (Business Plan)</option>
+                                <option value="notion">Notion (Plus Workspace)</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Member Capacity -->
+                        <div>
+                            <label class="block text-xs font-bold text-plum/70 mb-2 uppercase tracking-wider">2. Kuota Anggota Resmi Paket</label>
+                            <div class="flex items-center gap-3">
+                                <input type="range" id="calcMemberSlider" min="2" max="5" value="5" oninput="updateCostCalculation()" class="w-full accent-purple-brand cursor-pointer">
+                                <span id="calcMemberVal" class="font-bold text-plum text-lg w-12 text-center bg-lavender-soft py-1 rounded-lg">5</span>
+                            </div>
+                            <span class="text-[11px] text-plum/60 mt-1 block">Batas anggota disesuaikan dengan aturan resmi platform.</span>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div class="p-4 rounded-2xl bg-lavender-soft/50 border border-lavender text-xs text-plum/80 space-y-1">
+                            <p class="font-bold text-purple-brand flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-check"></i> Skema Terverifikasi
+                            </p>
+                            <p>Harga paket resmi diambil dari rincian publik penyedia software dan dikonversi secara rasional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Cost Display Card -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-gradient-to-br from-plum via-purple-deep to-plum text-white rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-lg">
+                            <!-- Background Sparkle -->
+                            <div class="absolute top-2 right-3 text-white/10 text-6xl font-black">✦</div>
+
+                            <span class="text-xs uppercase tracking-widest text-lavender font-bold">Rincian Estimasi Transparan</span>
+                            
+                            <div class="mt-4 space-y-3 border-b border-white/10 pb-4 text-sm">
+                                <div class="flex justify-between items-center text-white/80">
+                                    <span>Estimasi Paket Resmi (Total):</span>
+                                    <span id="calcTotalCost" class="font-bold text-white">Rp 220.000 / bln</span>
+                                </div>
+                                <div class="flex justify-between items-center text-white/80">
+                                    <span>Jumlah Anggota Kelompok:</span>
+                                    <span id="calcMembersCount" class="font-bold text-white">5 Orang</span>
+                                </div>
+                                <div class="flex justify-between items-center text-white/80">
+                                    <span>Biaya Platform/Verifikasi:</span>
+                                    <span class="font-bold text-emerald-400">Rp 0 (Prototipe)</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <span class="text-xs text-lavender/80 block font-medium">Estimasi Biaya Per Orang / Bulan:</span>
+                                <div id="calcPerPerson" class="text-3xl sm:text-4xl font-black text-white mt-1 font-condensed tracking-tight">
+                                    Rp 44.000 <span class="text-sm font-normal text-lavender">/bln</span>
+                                </div>
+                            </div>
+
+                            <p id="calcNote" class="mt-4 text-[11px] text-lavender/70 italic border-t border-white/10 pt-3">
+                                *Catatan: Harga akan ditampilkan setelah pilihan akses terverifikasi dan disetujui provider.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BRAND STORY SECTION -->
+    <section class="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-lavender-soft via-offwhite to-mauve-soft/30 rounded-3xl p-8 sm:p-12 lg:p-16 border border-lavender relative shadow-card">
+                
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-purple-brand text-xs font-extrabold uppercase tracking-wider border border-lavender">
+                            Cerita Kami
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-plum tracking-tight font-condensed leading-tight">
+                            DIBUAT UNTUK GENERASI YANG TERUS BERKEMBANG
+                        </h2>
+                        <p class="text-base sm:text-lg text-plum/80 leading-relaxed">
+                            Toolpool Campus hadir untuk membantu mahasiswa menemukan cara yang lebih praktis dan terjangkau dalam memanfaatkan tools digital. Kami ingin mendukung proses belajar, kreativitas, dan kolaborasi melalui pilihan akses yang transparan dan sesuai ketentuan penyedia layanan.
+                        </p>
+
+                        <div class="pt-2 flex flex-wrap gap-4 text-xs font-bold text-plum">
+                            <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-lavender">
+                                <i class="fa-solid fa-graduation-cap text-purple-brand"></i>
+                                <span>Fokus Kampus & Pelajar</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-lavender">
+                                <i class="fa-solid fa-handshake text-purple-brand"></i>
+                                <span>Akses Kolaboratif</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl border border-lavender">
+                                <i class="fa-solid fa-shield-halved text-purple-brand"></i>
+                                <span>100% Bebas Risiko Blokir</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 text-center lg:text-right relative">
+                        <div class="inline-block p-6 rounded-2xl bg-white border border-lavender shadow-glossy max-w-sm text-left">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-lavender flex items-center justify-center font-bold text-purple-brand">
+                                    TC
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-plum text-sm">Toolpool Campus</h4>
+                                    <span class="text-xs text-purple-brand font-semibold">Semarang, Indonesia</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-plum/70 italic">
+                                "Inovasi lahir saat akses produktivitas tidak lagi menjadi hambatan bagi setiap anak muda yang ingin berkarya."
+                            </p>
+                            <span class="block mt-3 text-[10px] font-bold text-purple-light uppercase tracking-widest text-right">#ToolsTogetherBiggerImpact</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 lg:py-24 bg-offwhite border-t border-lavender/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender text-purple-brand text-xs font-extrabold uppercase tracking-wider">
+                    Pertanyaan Umum
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-plum tracking-tight font-condensed uppercase">
+                    PERTANYAAN YANG SERING DIAJUKAN
+                </h2>
+                <p class="text-base text-plum/75">
+                    Temukan jawaban cepat seputar konsep, kepatuhan legal, dan ketersediaan layanan.
+                </p>
+            </div>
+
+            <div class="mt-12 space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Apa itu Toolpool Campus?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Toolpool Campus adalah platform yang membantu mahasiswa menemukan pilihan akses terjangkau untuk tools produktivitas digital seperti Canva, ChatGPT, Grammarly, dan Notion melalui skema grup/tim yang secara eksplisit diizinkan oleh syarat & ketentuan masing-masing penyedia layanan.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Tools apa saja yang tersedia?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Fokus utama saat ini mencakup 4 tools produktivitas terpopuler: Canva, ChatGPT, Grammarly, dan Notion. Status ketersediaan setiap tool dapat dicek langsung pada katalog (misal: Informasi Tersedia, Segera Hadir, atau Perlu Verifikasi).
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Bagaimana cara kerja platform?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Kamu dapat memilih tools yang dibutuhkan, meninjau rincian opsi langganan beserta harga per orang yang transparan, lalu mendaftar untuk disatukan dalam kelompok langganan resmi yang sah.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Apakah semua tools bisa digunakan melalui skema patungan?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Tidak semua software mengizinkan skema berbagi atau kelompok. Toolpool Campus secara ketat hanya menyediakan fasilitas patungan pada produk yang secara resmi memiliki paket Team, Group, atau Edu dengan fitur pengundangan anggota yang legal. Kami tidak pernah memfasilitasi "share akun ilegal" atau kata sandi bersama.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Bagaimana biaya dan pembayaran ditentukan?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Biaya dihitung secara rinci berdasarkan harga berlangganan resmi platform dibagi kuota anggota yang sah. Jika ada biaya platform atau verifikasi, hal tersebut disampaikan secara jujur sebelum pendaftaran.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Bagaimana jika pilihan akses belum tersedia?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Kamu dapat menekan tombol "Minta Verifikasi" atau mengisi formulir kontak. Tim kami akan mengevaluasi apakah software tersebut memiliki skema tim resmi yang aman untuk dibuka bagi mahasiswa.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item bg-white rounded-2xl border border-lavender overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-plum hover:text-purple-brand transition-colors text-base sm:text-lg">
+                        <span>Bagaimana cara menghubungi tim Toolpool Campus?</span>
+                        <i class="fa-solid fa-chevron-down text-purple-brand text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-5 text-sm text-plum/80 leading-relaxed border-t border-lavender/40 pt-3">
+                        Kamu dapat mengisi formulir pesan di bagian bawah halaman ini atau menghubungi kami melalui saluran media sosial resmi di Instagram <strong class="font-bold text-purple-brand">@toolpoolcampus</strong>.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT / INQUIRY FORM SECTION -->
+    <section id="kontak" class="py-16 lg:py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-offwhite rounded-3xl p-8 sm:p-12 border border-lavender shadow-card">
+                
+                <div class="text-center max-w-xl mx-auto space-y-2 mb-8">
+                    <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-lavender-soft text-purple-brand text-xs font-bold uppercase">
+                        Hubungi Tim
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-black text-plum font-condensed">ADA PERTANYAAN ATAU USULAN TOOLS?</h3>
+                    <p class="text-sm text-plum/70">Kirimkan pesanmu kepada tim Toolpool Campus. Kami siap membantu!</p>
+                </div>
+
+                <!-- Prototype Form -->
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-plum/80 mb-1">Nama Lengkap *</label>
+                            <input type="text" id="contactName" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 bg-white border border-lavender rounded-xl text-sm text-plum focus:outline-none focus:border-purple-brand">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-plum/80 mb-1">Email Mahasiswa *</label>
+                            <input type="email" id="contactEmail" required placeholder="budi@students.undip.ac.id" class="w-full px-4 py-3 bg-white border border-lavender rounded-xl text-sm text-plum focus:outline-none focus:border-purple-brand">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-plum/80 mb-1">Universitas / Kampus</label>
+                            <input type="text" id="contactCampus" placeholder="Contoh: Universitas Diponegoro" class="w-full px-4 py-3 bg-white border border-lavender rounded-xl text-sm text-plum focus:outline-none focus:border-purple-brand">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-plum/80 mb-1">Topik Pertanyaan</label>
+                            <select id="contactSubject" class="w-full px-4 py-3 bg-white border border-lavender rounded-xl text-sm text-plum focus:outline-none focus:border-purple-brand">
+                                <option value="Informasi Tools">Informasi Tools Digital</option>
+                                <option value="Usulan Tool Baru">Usulan Tool Baru</option>
+                                <option value="Pertanyaan Kepatuhan">Pertanyaan Kepatuhan/Terms</option>
+                                <option value="Kemitraan Kampus">Kemitraan Komunitas Kampus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-plum/80 mb-1">Pesan Anda *</label>
+                        <textarea id="contactMessage" required rows="4" placeholder="Tuliskan pertanyaan atau masukanmu di sini..." class="w-full px-4 py-3 bg-white border border-lavender rounded-xl text-sm text-plum focus:outline-none focus:border-purple-brand"></textarea>
+                    </div>
+
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-[11px] text-plum/60 italic">*Formulir ini berfungsi sebagai bentuk simulasi kontak prototipe.</span>
+                        <button type="submit" class="gradient-btn text-white font-bold px-7 py-3 rounded-xl text-sm shadow-md flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                            <span>Kirim Pesan</span>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION SECTION -->
+    <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative bg-gradient-to-r from-plum via-purple-deep to-purple-brand rounded-3xl p-8 sm:p-14 text-white overflow-hidden shadow-floating">
+                
+                <!-- Background Glowing Ribbon Asset -->
+                <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-mauve/20 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute top-4 right-8 text-white/10 text-9xl font-black select-none pointer-events-none">✦</div>
+
+                <div class="relative z-10 max-w-2xl space-y-4 text-left">
+                    <span class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-lavender text-xs font-extrabold uppercase tracking-widest border border-white/20">
+                        Ayo Bergabung
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-condensed leading-none">
+                        YUK, MULAI PERJALANAN PRODUKTIFMU!
+                    </h2>
+                    <p class="text-base sm:text-lg text-lavender/90">
+                        Temukan tools yang sesuai dengan kebutuhan belajar dan berkaryamu bersama Toolpool Campus.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="#pilihan-tools" class="bg-white text-plum hover:bg-lavender-light font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-md">
+                            Jelajahi Tools
+                        </a>
+                        <a href="#kontak" class="border border-lavender/50 text-white hover:bg-white/10 font-bold px-7 py-3.5 rounded-full text-sm transition-all">
+                            Hubungi Kami
+                        </a>
+                    </div>
+
+                    <div class="pt-4 text-xs font-semibold text-lavender/70">
+                        Tagline: <strong class="text-white">“Tools Together, Bigger Impact.”</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-plum-dark text-lavender pt-16 pb-12 border-t border-purple-deep">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Brand Info Column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-purple-brand flex items-center justify-center">
+                            <div class="logo-diamond border-white text-white"></div>
+                        </div>
+                        <span class="font-black text-xl text-white tracking-tight font-condensed uppercase">Toolpool Campus</span>
+                    </div>
+                    <p class="text-xs text-lavender/70 leading-relaxed max-w-sm">
+                        Platform pencocokan akses terjangkau untuk tools produktivitas digital mahasiswa melalui skema langganan tim resmi yang aman dan transparan.
+                    </p>
+                    <div class="text-xs text-purple-light font-semibold">
+                        “Tools Together, Bigger Impact.”
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Navigasi Utama</h4>
+                    <ul class="space-y-2.5 text-xs text-lavender/75">
+                        <li><a href="#beranda" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#pilihan-tools" class="hover:text-white transition-colors">Pilihan Tools</a></li>
+                        <li><a href="#cara-kerja" class="hover:text-white transition-colors">Cara Kerja</a></li>
+                        <li><a href="#keunggulan" class="hover:text-white transition-colors">Keunggulan</a></li>
+                        <li><a href="#transparansi" class="hover:text-white transition-colors">Transparansi Biaya</a></li>
+                    </ul>
+                </div>
+
+                <!-- Featured Tools -->
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Pilihan Tools</h4>
+                    <ul class="space-y-2.5 text-xs text-lavender/75">
+                        <li><button onclick="openToolDetail('canva')" class="hover:text-white transition-colors">Canva Pro</button></li>
+                        <li><button onclick="openToolDetail('chatgpt')" class="hover:text-white transition-colors">ChatGPT Plus</button></li>
+                        <li><button onclick="openToolDetail('grammarly')" class="hover:text-white transition-colors">Grammarly</button></li>
+                        <li><button onclick="openToolDetail('notion')" class="hover:text-white transition-colors">Notion</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Kontak & Media</h4>
+                    <ul class="space-y-2.5 text-xs text-lavender/75">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-purple-light"></i>
+                            <span>info@toolpoolcampus.id</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-instagram text-purple-light"></i>
+                            <span>@toolpoolcampus</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-purple-light"></i>
+                            <span>Semarang, Jawa Tengah</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Legal Links -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-lavender/60">
+                <p>&copy; 2026 Toolpool Campus. Hak Cipta Dilindungi Undang-Undang.</p>
+                <div class="flex items-center gap-6">
+                    <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+                    <a href="javascript:void(0)" onclick="openModal('termsModal')" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MODAL DIALOGS -->
+
+    <!-- TOOL DETAIL MODAL -->
+    <div id="toolDetailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-plum/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 border border-lavender shadow-floating relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('toolDetailModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-offwhite hover:bg-lavender text-plum font-bold flex items-center justify-center transition-colors">
+                ✕
+            </button>
+            <div id="modalDetailContent">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL (PROTOTYPE) -->
+    <div id="loginModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-plum/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 border border-lavender shadow-floating relative">
+            <button onclick="closeModal('loginModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-offwhite text-plum font-bold flex items-center justify-center">
+                ✕
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-lavender-soft text-purple-brand flex items-center justify-center mx-auto text-xl mb-2">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-plum font-condensed">MASUK AKUN MAHASISWA</h3>
+                <p class="text-xs text-plum/60 mt-1">Gunakan akun terdaftar untuk melihat status patungan.</p>
+            </div>
+            <form onsubmit="handleAuthSim(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-plum/80 mb-1">Email Mahasiswa</label>
+                    <input type="email" required placeholder="nama@students.ac.id" class="w-full px-4 py-2.5 bg-offwhite border border-lavender rounded-xl text-sm focus:outline-none focus:border-purple-brand">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-plum/80 mb-1">Kata Sandi</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 bg-offwhite border border-lavender rounded-xl text-sm focus:outline-none focus:border-purple-brand">
+                </div>
+                <button type="submit" class="w-full gradient-btn text-white font-bold py-3 rounded-xl text-sm shadow-md">
+                    Masuk Sekarang
+                </button>
+            </form>
+            <p class="text-[11px] text-center text-plum/50 mt-4 italic">
+                *Prototipe Tampilan: Pendaftaran akun baru dibuka bersamaan dengan penutupan kuota kelompok.
+            </p>
+        </div>
+    </div>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-plum/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-lavender shadow-floating relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('privacyModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-offwhite text-plum font-bold flex items-center justify-center">
+                ✕
+            </button>
+
+            <h3 class="text-xl font-bold text-plum mb-4 font-condensed">KEBIJAKAN PRIVASI PROTOTIPE</h3>
+            <div class="text-xs text-plum/80 space-y-3 leading-relaxed">
+                <p>Toolpool Campus berkomitmen menjaga privasi data pengguna. Semua data yang diinputkan dalam bentuk simulasi ini tidak disimpan secara permanen di server luar.</p>
+                <p>Kami tidak pernah mengumpulkan informasi sensitif seperti kata sandi akun pribadi, detail kartu kredit, atau kredensial login software penyedia.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMS OF SERVICE MODAL -->
+    <div id="termsModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-plum/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-lavender shadow-floating relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('termsModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-offwhite text-plum font-bold flex items-center justify-center">
+                ✕
+            </button>
+
+            <h3 class="text-xl font-bold text-plum mb-4 font-condensed">SYARAT & KETENTUAN LAYANAN</h3>
+            <div class="text-xs text-plum/80 space-y-3 leading-relaxed">
+                <p><strong>1. Kepatuhan Penyedia Software:</strong> Toolpool Campus hanya memfasilitasi grup patungan pada produk yang secara eksplisit mengizinkan skema kelompok / tim / edukasi.</p>
+                <p><strong>2. Larangan Akun Ilegal:</strong> Kami menolak segala bentuk jual-beli lisensi bajakan, penyebaran kredensial ilegal, atau aktivitas melanggar hukum hak cipta.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Tool Database for Detail Modals
+        const toolData = {
+            canva: {
+                name: "Canva Pro",
+                category: "Desain & Konten Visual",
+                status: "Informasi Tersedia",
+                badgeClass: "bg-emerald-100 text-emerald-800",
+                icon: "fa-palette",
+                iconColor: "text-[#00C4CC]",
+                bgColor: "bg-[#00C4CC]/10",
+                desc: "Solusi desain grafis intuitif untuk presentasi kuliah, poster acara kampus, dan konten organisasi.",
+                details: [
+                    "Penggunaan fitur Canva Team resmi sesuai regulasi Canva.",
+                    "Akses penuh ke 100M+ stok foto, video, dan grafis premium.",
+                    "Akses Magic Studio AI (Background Remover, Magic Expand).",
+                    "Akses independen melalui email pribadi pengguna."
+                ],
+                legalNote: "Skema Canva Team resmi mengizinkan pemilik tim untuk mengundang anggota sesuai kuota."
+            },
+            chatgpt: {
+                name: "ChatGPT Plus",
+                category: "AI & Productivity Assistant",
+                status: "Informasi Tersedia",
+                badgeClass: "bg-emerald-100 text-emerald-800",
+                icon: "fa-robot",
+                iconColor: "text-[#10A37F]",
+                bgColor: "bg-[#10A37F]/10",
+                desc: "Akses asisten AI terdepan untuk membantu riset akademis, pemrograman, dan pembuatan draf tulisan.",
+                details: [
+                    "Akses skema ChatGPT Team / Workspace resmi.",
+                    "Prioritas respon cepat di jam sibuk perkuliahan.",
+                    "Analisis dokumen PDF & pembuatan grafik visual.",
+                    "Ruang kerja kolaboratif berizin resmi."
+                ],
+                legalNote: "Skema ChatGPT Team disediakan oleh OpenAI untuk kolaborasi pengguna dalam satu grup."
+            },
+            grammarly: {
+                name: "Grammarly",
+                category: "Writing & Grammar Assistant",
+                status: "Perlu Verifikasi",
+                badgeClass: "bg-amber-100 text-amber-800",
+                icon: "fa-pen-nib",
+                iconColor: "text-[#05A378]",
+                bgColor: "bg-[#05A378]/10",
+                desc: "Pemeriksa tata bahasa dan struktur kalimat bahasa Inggris untuk jurnal dan karya ilmiah.",
+                details: [
+                    "Pemeriksaan tata bahasa & nada penulisan tingkat lanjut.",
+                    "Deteksi plagiarism terintegrasi.",
+                    "Saran gaya penulisan akademik yang presisi."
+                ],
+                legalNote: "Skema saat ini sedang diverifikasi terkait syarat & batas lisensi anggota dari Grammarly Business."
+            },
+            notion: {
+                name: "Notion",
+                category: "Workspace & Notes",
+                status: "Segera Hadir",
+                badgeClass: "bg-purple-100 text-purple-900",
+                icon: "fa-cube",
+                iconColor: "text-plum",
+                bgColor: "bg-plum/10",
+                desc: "Sistem organisasi fleksibel untuk mencatat perkuliahan, melacak tugas, dan kolaborasi proyek.",
+                details: [
+                    "Akses Notion Plus / Team workspace.",
+                    "Unggahan file tanpa batasan kapasitas.",
+                    "Fitur riwayat dokumen hingga 30 hari."
+                ],
+                legalNote: "Penyiapan integrasi kemitraan edukasi sedang berlangsung."
+            }
+        };
+
+        // Pricing Calculator Data Matrix
+        const toolPrices = {
+            canva: { total: 220000, defaultMembers: 5 },
+            chatgpt: { total: 400000, defaultMembers: 4 },
+            grammarly: { total: 350000, defaultMembers: 4 },
+            notion: { total: 180000, defaultMembers: 3 }
+        };
+
+        // Mobile Menu Drawer Toggle
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const menuIcon = document.getElementById('menuIcon');
+            drawer.classList.toggle('hidden');
+            if (drawer.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const faqItem = button.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('i');
+
+            const isExpanded = !answer.classList.contains('hidden');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.faq-item i').forEach(el => el.style.transform = 'rotate(0deg)');
+
+            if (!isExpanded) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Tools Catalog Category Filtering
+        function filterTools(category, btnElement) {
+            // Update Active Tab Button Styling
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.className = 'category-btn text-xs sm:text-sm font-bold px-4 py-2 rounded-xl text-plum hover:bg-lavender-soft transition-all';
+            });
+            btnElement.className = 'category-btn active text-xs sm:text-sm font-bold px-4 py-2 rounded-xl bg-purple-brand text-white transition-all';
+
+            const cards = document.querySelectorAll('.tool-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            checkEmptyState(visibleCount);
+        }
+
+        // Live Search Filter
+        function searchTools() {
+            const query = document.getElementById('toolSearchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.tool-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                if (name.includes(query)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            checkEmptyState(visibleCount);
+        }
+
+        function checkEmptyState(count) {
+            const emptyState = document.getElementById('noResultsState');
+            if (count === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+
+        // Open Tool Detail Modal
+        function openToolDetail(toolKey) {
+            const data = toolData[toolKey];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modalDetailContent');
+            modalContent.innerHTML = `
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 rounded-2xl ${data.bgColor} ${data.iconColor} flex items-center justify-center text-3xl font-bold">
+                        <i class="fa-solid ${data.icon}"></i>
+                    </div>
+                    <div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${data.badgeClass}">${data.status}</span>
+                        <h3 class="text-2xl font-extrabold text-plum mt-1">${data.name}</h3>
+                        <p class="text-xs text-purple-brand font-semibold">${data.category}</p>
+                    </div>
+                </div>
+
+                <p class="text-sm text-plum/80 leading-relaxed border-b border-lavender/60 pb-4 mb-4">
+                    ${data.desc}
+                </p>
+
+                <div class="space-y-3 mb-6">
+                    <h4 class="text-xs font-bold text-plum uppercase tracking-wider">Fitur Utama Akses:</h4>
+                    <ul class="space-y-2 text-xs text-plum/80">
+                        ${data.details.map(item => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-purple-brand mt-0.5"></i><span>${item}</span></li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-lavender-soft/60 border border-lavender text-xs text-plum/80 mb-6">
+                    <strong class="font-bold text-purple-brand block mb-0.5">Aturan Kepatuhan Official:</strong>
+                    ${data.legalNote}
+                </div>
+
+                <div class="flex items-center justify-between gap-3 pt-2">
+                    <button onclick="closeModal('toolDetailModal')" class="px-5 py-2.5 rounded-xl border border-lavender text-xs font-bold text-plum hover:bg-lavender-soft">
+                        Tutup
+                    </button>
+                    <button onclick="requestToolAccess('${data.name}')" class="gradient-btn text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-md">
+                        Minta Akses Terverifikasi
+                    </button>
+                </div>
+            `;
+
+            openModal('toolDetailModal');
+        }
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Interactive Cost Simulator Logic
+        function updateCostCalculation() {
+            const toolKey = document.getElementById('calcToolSelect').value;
+            const members = parseInt(document.getElementById('calcMemberSlider').value);
+            
+            document.getElementById('calcMemberVal').innerText = members;
+            document.getElementById('calcMembersCount').innerText = members + " Orang";
+
+            const toolInfo = toolPrices[toolKey];
+            if (toolInfo) {
+                const total = toolInfo.total;
+                const perPerson = Math.round(total / members);
+
+                document.getElementById('calcTotalCost').innerText = "Rp " + total.toLocaleString('id-ID') + " / bln";
+                document.getElementById('calcPerPerson').innerHTML = "Rp " + perPerson.toLocaleString('id-ID') + ' <span class="text-sm font-normal text-lavender">/bln</span>';
+            }
+        }
+
+        // Contact Form Submission Handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value;
+            showToast(`Terima kasih, ${name}! Pesan simulasi prototipe kamu berhasil dikirim.`);
+            document.getElementById('contactForm').reset();
+        }
+
+        // Auth Simulation Handler
+        function handleAuthSim(event) {
+            event.preventDefault();
+            closeModal('loginModal');
+            showToast("Akses Simulasi Masuk Berhasil! Fitur pendaftaran resmi segera hadir.");
+        }
+
+        // Request Access Action
+        function requestToolAccess(toolName) {
+            closeModal('toolDetailModal');
+            showToast(`Permintaan akses untuk ${toolName} dicatat! Tim kami akan memverifikasi ketersediaan.`);
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'bg-plum text-white px-5 py-3 rounded-2xl shadow-xl text-xs sm:text-sm font-bold flex items-center gap-3 border border-purple-light/40 pointer-events-auto transition-all transform translate-y-2 opacity-0';
+            toast.innerHTML = `
+                <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+                <span>${message}</span>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        // Initialize default cost calculation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCostCalculation();
+        });
+    </script>
+</body>
+</html>
